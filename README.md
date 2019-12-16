@@ -1,1 +1,7 @@
-# 000.farm
+000.farm = Technology + Aquaponics
+
+
+## Techology Stack
+
+- Arduino
+- Raspberry Pi
