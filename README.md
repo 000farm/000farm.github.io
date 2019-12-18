@@ -167,14 +167,24 @@ void setup() {
 
 void loop() {
   // Temp
-  vOut = analogRead(tempSensor); 
+  vOut = analogRead(tempSensor); // Double reads
+  delay(100);
+  vOut = analogRead(tempSensor);  
   tempC = ((vOut/1024.0)*5000)/10; // Convert to C? 
   Serial.println("sensor_temp:" + tempC);
-
+  delay(500);
+  
   // Light
+  lightValue = analogRead(lightSensor); // Double reads
+  delay(100);
   lightValue = analogRead(lightSensor);
   Serial.println("sensor_light:" + String(lightValue));
-  
+  delay(500);
+
+  // Sleep
   delay(5000);
 }
+
+// Double reads: https://forum.arduino.cc/index.php?topic=69742.0
+
 ```
